@@ -18,10 +18,8 @@ void ThreadPool::managePool(int i) {
         mtx.lock();
         Work w = *(queue->dequeue());
         mtx.unlock();
-        std::thread t;
         printf("Thread %d run work %d\n",i,w.getId());
-        t = std::thread(w);
-        t.join();
+        w.doWork();
     }
 }
 

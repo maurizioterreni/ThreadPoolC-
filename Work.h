@@ -16,9 +16,6 @@ private:
 public:
     Work(int i,int s);
     int getId();
-    void operator()();
-
-protected:
     void doWork();
 };
 

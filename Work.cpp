@@ -10,10 +10,6 @@ Work::Work(int id, int s) {
     this->s = s;
 }
 
-void Work::operator()() {
-    doWork();
-}
-
 int Work::getId() {
     return this->id;
 }
