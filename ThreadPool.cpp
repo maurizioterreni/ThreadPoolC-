@@ -26,8 +26,15 @@ void ThreadPool::managePool(int i) {
 void ThreadPool::threadPool() {
     int i = 0;
     printf("Totale Work nella queue = %d\n" , queue->size());
+    clock_t start = clock();
     for (int i = 0; i < this->numThread; ++i)
         some_threads.push_back(std::thread(&ThreadPool::managePool,this, i));
+
+    clock_t end = clock();
     for (auto& t: some_threads) t.join();
+    double diffticks = end - start;
+    double diffms = diffticks / ( CLOCKS_PER_SEC / 1000 );
     printf("Totale Work nella queue %d\n" , queue->size());
+    printf("Tempo totale per la generezione dei Thread %lf\n ms" , diffms);
+
 }
