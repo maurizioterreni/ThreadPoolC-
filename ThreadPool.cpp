@@ -35,6 +35,6 @@ void ThreadPool::threadPool() {
     double diffticks = end - start;
     double diffms = diffticks / ( CLOCKS_PER_SEC / 1000 );
     printf("Totale Work nella queue %d\n" , queue->size());
-    printf("Tempo totale per la generezione dei Thread %lf\n ms" , diffms);
+    printf("Tempo totale per la generezione dei Thread %lf ms\n" , diffms);
 
 }
